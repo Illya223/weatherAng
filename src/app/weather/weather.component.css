@@ -1,0 +1,33 @@
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный фон */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1; /* Устанавливаем более высокий z-index для фона */
+  }
+  .forecast-container {
+    margin-top: 20px;
+    overflow: hidden; /* Чтобы не показывать скролл вертикально */
+  }
+  
+  .forecast-scroll {
+    display: flex;
+    overflow-x: auto; /* Горизонтальная прокрутка */
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  .forecast-block {
+    min-width: 200px; /* Минимальная ширина каждого блока */
+    padding: 20px;
+    margin-right: 40px; /* Отступ между блоками */
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    flex-shrink: 0; /* Запретить сжатие блока */
+  }

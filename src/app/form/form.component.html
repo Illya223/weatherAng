@@ -1,0 +1,16 @@
+<div class="modal">
+    <div class="modal-content">
+      <form (ngSubmit)="onSubmit()" class="form">
+        <label for="city">City</label>
+      <select id="city" [(ngModel)]="city" name="city" required>
+        <option *ngFor="let city of cities" [value]="city.name">{{ city.name }}</option>
+      </select>
+      
+        
+      <div class="buttons">
+        <button type="submit" class="btn btn-primary">Get Weather</button>
+        <button type="button" (click)="onCancel()"  class="btn  btn-danger">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
