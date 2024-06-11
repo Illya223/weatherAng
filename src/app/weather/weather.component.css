@@ -12,22 +12,43 @@
   }
   .forecast-container {
     margin-top: 20px;
-    overflow: hidden; /* Чтобы не показывать скролл вертикально */
+    overflow: hidden;
   }
   
   .forecast-scroll {
     display: flex;
-    overflow-x: auto; /* Горизонтальная прокрутка */
+    overflow-x: auto;
     padding: 10px;
     border: 1px solid #ccc;
   }
   
-  .forecast-block {
-    min-width: 200px; /* Минимальная ширина каждого блока */
+  .day-block {
+    min-width: 200px;
     padding: 20px;
-    margin-right: 40px; /* Отступ между блоками */
+    margin-right: 20px;
     background-color: #f0f0f0;
     border: 1px solid #ccc;
     border-radius: 5px;
-    flex-shrink: 0; /* Запретить сжатие блока */
+    flex-shrink: 0;
+    cursor: pointer;
+  }
+  
+  .hourly-container {
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+  }
+  
+  .detail-block {
+    min-width: 150px;
+    padding: 10px;
+    margin-right: 10px;
+    background-color: #e0e0e0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    flex-shrink: 0;
+  }
+  button {
+    
+    cursor: pointer;
   }

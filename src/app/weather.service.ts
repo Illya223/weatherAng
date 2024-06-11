@@ -39,7 +39,7 @@ export class WeatherService {
       switchMap(coords => {
         const url = `${this.apiUrl}/forecast?lat=${coords.lat}&lon=${coords.lon}&units=metric&appid=${this.apiKey}`;
         return this.http.get<any>(url).pipe(
-          map(response => response.list) // Убедитесь, что вы возвращаете массив list
+          map(response => response) // Убедитесь, что вы возвращаете массив list
         );
       })
     );
