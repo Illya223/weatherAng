@@ -62,6 +62,7 @@ export class WeatherComponent implements OnInit {
     data.list.forEach((entry: any) => {
       const date = new Date(entry.dt * 1000);
       const dayDate = date.toISOString().split('T')[0]; // Получаем дату без времени
+      
 
       if (!currentDay || currentDay.date !== dayDate) {
         currentDay = {
@@ -74,7 +75,8 @@ export class WeatherComponent implements OnInit {
 
       currentDay.details.push({
         dt: entry.dt,
-        temp: entry.main.temp
+        temp: entry.main.temp,
+        iconUrl: entry.weather[0].icon
       });
 
       // Пересчитываем среднюю температуру

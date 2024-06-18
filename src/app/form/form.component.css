@@ -54,3 +54,19 @@
   }
   .full-width {
     width: 100%;}
+  #city{
+    width: 70%;
+  }
+  label{
+    padding-right: 20px;
+  }
+  @media (max-width: 680px){
+    .modal-content{
+      width: 70%;
+    }
+  }
+  @media (max-width: 450px){
+    .modal-content{
+      width: 90%;
+    }
+  }

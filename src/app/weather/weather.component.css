@@ -26,7 +26,7 @@
     min-width: 200px;
     padding: 20px;
     margin-right: 20px;
-    background-color: #f0f0f0;
+    background-color: #ceffff;
     border: 1px solid #ccc;
     border-radius: 5px;
     flex-shrink: 0;
@@ -52,3 +52,16 @@
     
     cursor: pointer;
   }
+@media (max-width: 680px) {
+  
+  .forecast-scroll {
+    flex-direction: column;
+    overflow-y: scroll;
+    height: 500px;
+  }
+  .day-block {
+    margin: 10px 20px;
+  }
+  
+
+}
