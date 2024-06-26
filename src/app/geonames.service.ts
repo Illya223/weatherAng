@@ -17,6 +17,7 @@ export class GeonamesService {
 
   getCities(): Observable<any> {
     const url = `${this.corsProxy}${this.apiUrl}?username=${this.username}&maxRows=1000&cities=cities15000`;
+    console.log(url)
     return this.http.get(url);
   }
 }
