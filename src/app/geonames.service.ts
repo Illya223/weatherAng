@@ -9,12 +9,14 @@ import { map } from 'rxjs/operators';
 export class GeonamesService {
   //private username = 'illya'; // Замените на ваш username Geonames
   //private apiUrl = `/geonames/searchJSON?username=${this.username}&maxRows=1000&cities=cities15000`;
-  private proxyUrl = 'http://localhost:3000/geonames';
+  private corsProxy = 'https://cors-anywhere.herokuapp.com/';
+  private apiUrl = 'http://api.geonames.org/searchJSON';
+  private username = 'illya'; // Ваше имя пользователя
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getCities(): Observable<any> {
-    return this.http.get<any>(this.proxyUrl);
-    
-    }
+    const url = `${this.corsProxy}${this.apiUrl}?username=${this.username}&maxRows=1000&cities=cities15000`;
+    return this.http.get(url);
+  }
 }
