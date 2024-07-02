@@ -34,7 +34,9 @@ export class WeatherComponent implements OnInit {
       data => {
         
         this.weatherData = this.processForecastData(data);
-      
+       console.log(data)
+        console.log(this.weatherData)
+        console.log(3)
       },
       error => {
         console.error('Error fetching weather data', error);
