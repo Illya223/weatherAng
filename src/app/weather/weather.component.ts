@@ -18,10 +18,12 @@ export class WeatherComponent implements OnInit {
 
   ngOnInit(): void {
     this.getWeather1();
+    
     }
 
   toggleForm(): void {
     this.showForm = !this.showForm;
+    console.log(1)
   }
   onCancel(): void {
     this.showForm = false; // Скрыть форму при отмене
@@ -31,9 +33,10 @@ export class WeatherComponent implements OnInit {
     this.weatherService.getWeatherbyDate(this.city).subscribe(
       data => {
         
-        this.weatherData = this.processForecastData(data);;
-        console.log(data)
+        this.weatherData = this.processForecastData(data);
+       console.log(data)
         console.log(this.weatherData)
+        console.log(3)
       },
       error => {
         console.error('Error fetching weather data', error);
@@ -47,6 +50,7 @@ export class WeatherComponent implements OnInit {
         this.city = event.city;
         this.weatherData = this.processForecastData(data);
         console.log(this.weatherData)
+        
       },
       error => {
         console.error('Error fetching weather data', error);
