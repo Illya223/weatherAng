@@ -253,11 +253,16 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var GeonamesService = /** @class */ (function () {
     function GeonamesService(http) {
         this.http = http;
-        this.username = 'illya'; // Замените на ваш username Geonames
-        this.apiUrl = "http://api.geonames.org/searchJSON?username=" + this.username + "&maxRows=1000&cities=cities15000";
+        //private username = 'illya'; // Замените на ваш username Geonames
+        //private apiUrl = `/geonames/searchJSON?username=${this.username}&maxRows=1000&cities=cities15000`;
+        this.corsProxy = 'https://cors-anywhere.herokuapp.com/';
+        this.apiUrl = 'http://api.geonames.org/searchJSON';
+        this.username = 'illya'; // Ваше имя пользователя
     }
     GeonamesService.prototype.getCities = function () {
-        return this.http.get(this.apiUrl);
+        var url = "" + this.corsProxy + this.apiUrl + "?username=" + this.username + "&maxRows=1000&cities=cities15000";
+        console.log(url);
+        return this.http.get(url);
     };
     GeonamesService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
@@ -401,6 +406,7 @@ var WeatherComponent = /** @class */ (function () {
     };
     WeatherComponent.prototype.toggleForm = function () {
         this.showForm = !this.showForm;
+        console.log(1);
     };
     WeatherComponent.prototype.onCancel = function () {
         this.showForm = false; // Скрыть форму при отмене
@@ -409,9 +415,9 @@ var WeatherComponent = /** @class */ (function () {
         var _this = this;
         this.weatherService.getWeatherbyDate(this.city).subscribe(function (data) {
             _this.weatherData = _this.processForecastData(data);
-            ;
             console.log(data);
             console.log(_this.weatherData);
+            console.log(3);
         }, function (error) {
             console.error('Error fetching weather data', error);
         });
